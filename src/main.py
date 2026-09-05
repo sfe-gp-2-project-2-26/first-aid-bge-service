@@ -86,7 +86,7 @@ def embed(req: EmbedRequest):
 CHUNK_MAX_TOKENS = 512
 
 # Initialize Docling Converter
-pipeline_options = PdfPipelineOptions(do_ocr=False, do_table_structure=True)
+pipeline_options = PdfPipelineOptions(do_ocr=False, do_table_structure=False)
 docling_converter = DocumentConverter(
     format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)}
 )
