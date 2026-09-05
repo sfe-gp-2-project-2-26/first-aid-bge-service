@@ -1,12 +1,16 @@
 FROM python:3.10-slim
 
-# System libs required by pypdfium2 (used by docling for PDF parsing)
+# System libs required by pypdfium2, opencv, and docling for PDF parsing and OCR
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    libgl1 \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
     libxcb1 \
     libx11-6 \
-    libxext6 \
-    libxrender1 \
-    libglib2.0-0 \
+    poppler-utils \
+    tesseract-ocr \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
