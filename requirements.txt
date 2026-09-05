@@ -4,3 +4,4 @@ pydantic>=2.9
 docling>=1.0
 flagembedding>=1.2
 torch>=2.0
+python-multipart
